@@ -92,22 +92,52 @@ def load_data(city, month, day):
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
-    print('\nCalculating The Most Frequent Times of Travel...\n')
+    print('\nCalculating The Least Frequent Times of Travel...\n')
     start_time = time.time()
 
+<<<<<<< HEAD
     # calculate and display the most common month
     commmth = df['Month'].value_counts().idxmax()
     
     print("The most common month is " + commmth)
+||||||| 0ed4483
+    # display the most common month
 
+
+    # display the most common day of week
+
+
+    # display the most common start hour
+=======
+    # calculate and display the most common month
+    commmth = df['Month'].value_counts().idxmin()
+    
+    print("The least common month is " + commmth)
+>>>>>>> refactoring
+
+<<<<<<< HEAD
     # calculate and display the most common day of week
     commday=df['Day'].value_counts().idxmax()
     
     print("The most common month is " + commday)
+||||||| 0ed4483
+=======
+    # calculate and display the most common day of week
+    commday=df['Day'].value_counts().idxmin()
+    
+    print("The least common month is " + commday)
+>>>>>>> refactoring
 
+<<<<<<< HEAD
     # calculate and display the most common start hour
     commstarthr = df['Start Time'].dt.strftime('%H').value_counts().idxmax()
     print ("The most common start time is " + commstarthr)
+||||||| 0ed4483
+=======
+    # calculate and display the most common start hour
+    commstarthr = df['Start Time'].dt.strftime('%H').value_counts().idxmin()
+    print ("The least common start time is " + commstarthr)
+>>>>>>> refactoring
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -115,9 +145,10 @@ def time_stats(df):
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
-    print('\nCalculating The Most Popular Stations and Trip...\n')
+    print('\nCalculating The Least Popular Stations and Trip...\n')
     start_time = time.time()
 
+<<<<<<< HEAD
     # calculate and display most commonly used start station
     commonstart = df['Start Station'].value_counts().idxmax()
     print('The most common starting station is: ' + commonstart)
@@ -129,6 +160,29 @@ def station_stats(df):
    
     trip = df['Start Station'].str.cat(df['End Station'],sep=" to ").value_counts().idxmax()
     print('The most common full trip is ' + trip)
+||||||| 0ed4483
+    # display most commonly used start station
+
+
+    # display most commonly used end station
+
+
+    # display most frequent combination of start station and end station trip
+
+
+=======
+    # calculate and display most commonly used start station
+    commonstart = df['Start Station'].value_counts().idxmin()
+    print('The least common starting station is: ' + commonstart)
+    
+    # TO DO: display most commonly used end station
+    commonend = df['End Station'].value_counts().idxmin()
+    print('The least common end station is: ' + commonend)
+    # calculate and display most frequent combination of start station and end station trip
+   
+    trip = df['Start Station'].str.cat(df['End Station'],sep=" to ").value_counts().idxmin()
+    print('The least common full trip is ' + trip)
+>>>>>>> refactoring
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -194,6 +248,7 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
+<<<<<<< HEAD
     
     #print dataframe header if requested
     while True:
@@ -205,6 +260,22 @@ def user_stats(df):
             break
                          
 #run program
+||||||| 0ed4483
+
+
+=======
+    
+    #print dataframe header if requested
+    while True:
+        datasnap = input("Would you like to see a snapshot of the rawdata? ").lower()
+        if datasnap == 'yes' or datasnap == 'y':
+            print(df.head())
+            break
+        else:
+            break
+                         
+
+>>>>>>> refactoring
 def main():
     while True:
         city, month, day = get_filters()
