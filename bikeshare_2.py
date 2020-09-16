@@ -92,7 +92,7 @@ def load_data(city, month, day):
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
-    print('\nCalculating The Most Frequent Times of Travel...\n')
+    print('\nCalculating The Least Frequent Times of Travel...\n')
     start_time = time.time()
 
     # calculate and display the most common month
@@ -115,20 +115,20 @@ def time_stats(df):
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
-    print('\nCalculating The Most Popular Stations and Trip...\n')
+    print('\nCalculating The Least Popular Stations and Trip...\n')
     start_time = time.time()
 
     # calculate and display most commonly used start station
-    commonstart = df['Start Station'].value_counts().idxmax()
-    print('The most common starting station is: ' + commonstart)
+    commonstart = df['Start Station'].value_counts().idxmin()
+    print('The least common starting station is: ' + commonstart)
     
     # TO DO: display most commonly used end station
-    commonend = df['End Station'].value_counts().idxmax()
-    print('The most common end station is: ' + commonend)
+    commonend = df['End Station'].value_counts().idxmin()
+    print('The least common end station is: ' + commonend)
     # calculate and display most frequent combination of start station and end station trip
    
-    trip = df['Start Station'].str.cat(df['End Station'],sep=" to ").value_counts().idxmax()
-    print('The most common full trip is ' + trip)
+    trip = df['Start Station'].str.cat(df['End Station'],sep=" to ").value_counts().idxmin()
+    print('The least common full trip is ' + trip)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
