@@ -1,14 +1,16 @@
 ### Date created
-Include the date you created this project and README file.
+9/15/2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+Take user input and respond with data based on user selection within the available datasets.
 
 ### Files used
-Include the files used
+chicago.csv
+new-york-city.csv
+washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
